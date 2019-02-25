@@ -4,6 +4,8 @@ export interface ToastOptions {
   message?: string;
   cssClass?: string | string[];
   duration?: number;
+  showActionButton?: boolean;
+  actionButtonText?: string;
   showCloseButton?: boolean;
   closeButtonText?: string;
   position?: 'top' | 'bottom' | 'middle';

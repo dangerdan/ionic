@@ -57,6 +57,11 @@ export class Toast implements ComponentInterface, OverlayInterface {
   @Prop() leaveAnimation?: AnimationBuilder;
 
   /**
+   * Text to display in the action button.
+   */
+  @Prop() actionButtonText?: string;
+
+  /**
    * Text to display in the close button.
    */
   @Prop() closeButtonText?: string;
@@ -87,6 +92,11 @@ export class Toast implements ComponentInterface, OverlayInterface {
    * The position of the toast on the screen.
    */
   @Prop() position: 'top' | 'bottom' | 'middle' = 'bottom';
+
+  /**
+   * If `true`, the action button will be displayed.
+   */
+  @Prop() showActionButton = false;
 
   /**
    * If `true`, the close button will be displayed.
@@ -185,6 +195,11 @@ export class Toast implements ComponentInterface, OverlayInterface {
         <div class="toast-container">
           {this.message !== undefined &&
             <div class="toast-message">{this.message}</div>
+          }
+          {this.showActionButton &&
+            <ion-button fill="clear" class="toast-button" onClick={() => this.dismiss(undefined, 'action')}>
+              {this.actionButtonText || 'Go'}
+            </ion-button>
           }
           {this.showCloseButton &&
             <ion-button fill="clear" class="toast-button" onClick={() => this.dismiss(undefined, 'cancel')}>

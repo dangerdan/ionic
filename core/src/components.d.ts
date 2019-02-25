@@ -4720,6 +4720,10 @@ export namespace Components {
 
   interface IonToast {
     /**
+    * Text to display in the action button.
+    */
+    'actionButtonText'?: string;
+    /**
     * If `true`, the toast will animate.
     */
     'animated': boolean;
@@ -4781,6 +4785,10 @@ export namespace Components {
     */
     'present': () => Promise<void>;
     /**
+    * If `true`, the action button will be displayed.
+    */
+    'showActionButton': boolean;
+    /**
     * If `true`, the close button will be displayed.
     */
     'showCloseButton': boolean;
@@ -4790,6 +4798,10 @@ export namespace Components {
     'translucent': boolean;
   }
   interface IonToastAttributes extends StencilHTMLAttributes {
+    /**
+    * Text to display in the action button.
+    */
+    'actionButtonText'?: string;
     /**
     * If `true`, the toast will animate.
     */
@@ -4850,6 +4862,10 @@ export namespace Components {
     * The position of the toast on the screen.
     */
     'position'?: 'top' | 'bottom' | 'middle';
+    /**
+    * If `true`, the action button will be displayed.
+    */
+    'showActionButton'?: boolean;
     /**
     * If `true`, the close button will be displayed.
     */
